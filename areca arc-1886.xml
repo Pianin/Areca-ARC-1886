@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.0</version>
+    <date>2025-01-15T19:33:01Z</date>
+    <groups>
+        <group>
+            <uuid>5c47926115a1470f9868763c08fbb709</uuid>
+            <name>RAID/Areca</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <uuid>99c9ac33f7ff43568f4c9a306eb52f9f</uuid>
+            <template>Areca ARC-1886</template>
+            <name>Areca ARC-1886</name>
+            <templates>
+                <template>
+                    <name>Generic SNMP</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>RAID/Areca</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>61eaa5322de84f7c81adf6edbdac4bfe</uuid>
+                    <name>Boot version</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.5.0</snmp_oid>
+                    <key>areca.boot</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The Boot version of raid subsystem.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>0237b448b99246c79b6a5a243b7d2f4c</uuid>
+                    <name>CPU model</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.7.0</snmp_oid>
+                    <key>areca.cpu</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The processor name of raid subsystem.</description>
+                    <inventory_link>HW_ARCH</inventory_link>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>f950e56afe304437ae1d5e3929aafc00</uuid>
+                    <name>CPU speed</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.8.0</snmp_oid>
+                    <key>areca.cpu.speed</key>
+                    <delay>60m</delay>
+                    <units>!MHz</units>
+                    <description>The CPU speed (in MHZ, e.g. 400) of Raid subsystem.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6342190b37cf41e189df781fd10d188f</uuid>
+                    <name>CPU Fan speed</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.2.1.19.1.3.1</snmp_oid>
+                    <key>areca.cpufan.speed</key>
+                    <units>RPM</units>
+                    <description>Fan speed in RPM, e.g. 3200.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>3edc5efeff3a47e0b25effd3c5dca160</uuid>
+                    <name>Firmware version</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.4.0</snmp_oid>
+                    <key>areca.firmware</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The firmware version of raid subsystem.</description>
+                    <inventory_link>SOFTWARE</inventory_link>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>ea24893223b74aa587aa4161c4a2a01b</uuid>
+                    <name>SDRAM ECC Capability</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.14.0</snmp_oid>
+                    <key>areca.memory.ecc</key>
+                    <delay>60m</delay>
+                    <description>The sdram ECC capability of Raid subsystem (0:no ECC, 1:ECC).</description>
+                    <valuemap>
+                        <name>ECC capability</name>
+                    </valuemap>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>b952dc901d9c47708e7d366495ca1eca</uuid>
+                    <name>Memory size</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.12.0</snmp_oid>
+                    <key>areca.memory.size</key>
+                    <delay>60m</delay>
+                    <units>B</units>
+                    <description>The memory size (in MB, e.g. 128) of Raid subsystem.</description>
+                    <preprocessing>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <parameters>
+                                <parameter>1048576</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>65a80ee009104dbbb8eab5947f004ed7</uuid>
+                    <name>Memory speed</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.13.0</snmp_oid>
+                    <key>areca.memory.speed</key>
+                    <delay>60m</delay>
+                    <units>!MHz</units>
+                    <description>The memory speed (in MHz) of Raid subsystem.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6b3a647c45244761b7012bc76773104e</uuid>
+                    <name>Model name</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.2.0</snmp_oid>
+                    <key>areca.model</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The model name of raid subsystem.</description>
+                    <inventory_link>MODEL</inventory_link>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>6772fb0cd6c04fc59f896c506433d230</uuid>
+                    <name>Rebuild rate</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.23.0</snmp_oid>
+                    <key>areca.raid.rebuildrate</key>
+                    <delay>60m</delay>
+                    <units>%</units>
+                    <description>5,20,50,80 in %.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>0588c83032ee42ce8c7afa485be8072a</uuid>
+                    <name>RAID Usage</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.22.0</snmp_oid>
+                    <key>areca.raid.usage</key>
+                    <delay>60m</delay>
+                    <description>0:normal, 1:JBOD.</description>
+                    <valuemap>
+                        <name>RAID Usage</name>
+                    </valuemap>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>3baf66d5bbc548bbb69a39d6bb4c7f6c</uuid>
+                    <name>Possibility to use RAID6</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.19.0</snmp_oid>
+                    <key>areca.raid6.possib</key>
+                    <delay>60m</delay>
+                    <description>0:no RAID6, 1:RAID6.</description>
+                    <valuemap>
+                        <name>RAID 6 usage</name>
+                    </valuemap>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>df1a6e7854b94fa1926d0616a1761125</uuid>
+                    <name>Serial number</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.3.0</snmp_oid>
+                    <key>areca.serial</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The serial number of raid subsystem.</description>
+                    <inventory_link>SERIALNO_A</inventory_link>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>f286ac6c5c4e417487ecec04f3066dc6</uuid>
+                    <name>Controller Temp.</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.2.1.20.1.3.2</snmp_oid>
+                    <key>areca.temperature.controller</key>
+                    <units>°C</units>
+                    <description>Temperature value.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>7e95582cc8bd4e25b0d0e08119742c6d</uuid>
+                    <name>CPU temperature</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.2.1.20.1.3.1</snmp_oid>
+                    <key>areca.temperature.cpu</key>
+                    <units>°C</units>
+                    <description>Temperature value.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+                <item>
+                    <uuid>e9a0301a8d4d444daf2f5dad782fab59</uuid>
+                    <name>Vendor name</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>1.3.6.1.4.1.18928.1.2.1.1.0</snmp_oid>
+                    <key>areca.vendor</key>
+                    <delay>60m</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>The vendor name of raid subsystem.</description>
+                    <tags>
+                        <tag>
+                            <tag>component</tag>
+                            <value>system</value>
+                        </tag>
+                    </tags>
+                </item>
+            </items>
+            <valuemaps>
+                <valuemap>
+                    <uuid>3b9f870c940d43f68ad8532af027da79</uuid>
+                    <name>ECC capability</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>No ECC</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>ECC</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>72f2e3a86a634ff58e73bfd3b9a547e4</uuid>
+                    <name>RAID 6 usage</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>no</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>yes</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>4e6fcba1d4044cfcae917ff1026103fe</uuid>
+                    <name>RAID Usage</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>Normal</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>JBOD</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+            </valuemaps>
+        </template>
+    </templates>
+</zabbix_export>
